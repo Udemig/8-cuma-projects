@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import 'variables';
+@import 'breakpoints';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'roboto';
+  background: #f6f8fc;
+}
+
+header {
+  @extend .between; // between classın özellikleini aktarrdık
+  padding: 20px;
+  gap: 20px;
+  font-size: 21px;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    i {
+      font-size: 29px;
+    }
+    img {
+      width: 50px;
+    }
+  }
+
+  .middle {
+    form {
+      display: flex;
+      background: rgb(235, 234, 234);
+      padding: 6px 9px;
+      border-radius: 10px;
+
+      input {
+        border: none;
+        outline: none;
+        font-size: 18px;
+        background: transparent;
+      }
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  .right {
+    @extend .between;
+    gap: 15px;
+
+    i {
+      @extend .icon;
+    }
+
+    img {
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+    }
+  }
+}
+
+// ana içerik alanı
+section {
+  display: flex;
+  gap: 20px;
+}
+
+// sol navigason alanı
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 40px;
+  @include sm {
+    padding: 0px;
+    padding-left: 6px;
+  }
+
+  .create {
+    background: $light_blue;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    &:hover {
+      box-shadow: 2px 2px 10px gray;
+    }
+  }
+
+  ul {
+    // erlamanları alt alta sıralyıp aralarına boşluk verne
+    //1) flex ile
+    // display: flex;
+    // flex-direction: column;
+    //2) grid kullanımı
+    display: grid;
+
+    gap: 16px;
+
+    li {
+      padding: 8px;
+      margin-left: 4px;
+      display: flex;
+      gap: 12px;
+      border-radius: 0 15px 15px 0;
+      &:hover {
+        background: $light_blue;
+      }
+    }
+  }
+
+  .bottom {
+    margin-left: 8px;
+  }
+}
+
+// js ile eklediğimiz hide class'ı aktifse
+// bütün yazılı kaldır
+.hide {
+  span {
+    display: none;
+  }
+}
+
+// orta > mail alanı
+main {
+  // flex elemanın büyümesine izin verir
+  flex-grow: 1;
+
+  @include sm {
+    margin-right: 20px;
+  }
+
+  .top {
+    @extend .between;
+    background: white;
+    border-radius: 10px 10px 0 0;
+    padding: 8px 16px;
+
+    i {
+      @extend .icon;
+    }
+
+    .left,
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  .mails {
+    background: $gray;
+    height: 80vh;
+  }
+}
+
+// bir mail
+.mail {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  column-gap: 5px;
+  font-size: 16px;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.4);
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    overflow: hidden; // taşan yazıları gizle
+
+    .title {
+      font-weight: bold;
+    }
+
+    .desc {
+      overflow: hidden; // taşan yazıları gizle
+      white-space: nowrap; // tek satırda yaz
+      text-overflow: ellipsis; // eğerki taşan yazı varsa ... koy
+    }
+  }
+
+  .time {
+    text-align: end;
+    white-space: nowrap;
+  }
+
+  // sil butonunu mail hoverlanınca göster
+  button {
+    display: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 4px;
+    border-radius: 5px;
+    &:hover {
+      background: rgb(201, 200, 200);
+    }
+  }
+
+  &:hover > button {
+    display: block;
+  }
+
+  &:hover > .time {
+    display: none;
+  }
+}
+
+// sağ > yan içerik
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  @include sm {
+    padding: 12px;
+  }
+
+  span {
+    background: $dark_gray;
+    height: 2px;
+    width: 100%;
+  }
+
+  img {
+    @extend .icon;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+
+  @include sm {
+    display: none;
+  }
+}
