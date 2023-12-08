@@ -108,12 +108,25 @@ nav {
     gap: 16px;
 
     li {
-      padding: 8px;
-      margin-left: 4px;
-      display: flex;
-      gap: 12px;
-      border-radius: 0 15px 15px 0;
-      &:hover {
+      list-style: none;
+      label {
+        display: flex;
+        gap: 12px;
+        margin-left: 4px;
+        border-radius: 0 15px 15px 0;
+        padding: 8px;
+        cursor: pointer;
+        &:hover {
+          background: $light_blue;
+        }
+      }
+
+      input {
+        display: none;
+      }
+
+      // eğerki içinde inputu tikle olan li elemanı varsa stilleri uygular
+      &:has(input:checked) label {
         background: $light_blue;
       }
     }
@@ -175,6 +188,10 @@ main {
   border-bottom: 1px solid white;
   cursor: pointer;
 
+  #star {
+    color: gold;
+  }
+
   &:hover {
     box-shadow: 0 0 30px rgba(128, 128, 128, 0.4);
   }
@@ -209,21 +226,25 @@ main {
   }
 
   // sil butonunu mail hoverlanınca göster
-  button {
+  #button-wrapper {
     display: none;
+  }
+
+  button {
     border: none;
     background: transparent;
     cursor: pointer;
     transition: all 0.3s;
-    padding: 4px;
+    padding: 4px 10px;
     border-radius: 5px;
     &:hover {
       background: rgb(201, 200, 200);
     }
   }
 
-  &:hover > button {
-    display: block;
+  &:hover > #button-wrapper {
+    display: flex;
+    justify-content: end;
   }
 
   &:hover > .time {
@@ -257,5 +278,83 @@ aside {
 
   @include sm {
     display: none;
+  }
+}
+
+// Modal.scss
+.modal-wrapper {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+}
+
+.modal {
+  background: white;
+  width: 80%;
+  max-width: 700px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+
+  input {
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    margin: 0 6px;
+    outline: none;
+  }
+
+  textarea {
+    height: 100%;
+    border: none;
+    outline: none;
+    font-family: 'roboto';
+    resize: none;
+    margin: 0 6px;
+    padding-top: 10px;
+  }
+
+  #send {
+    width: 140px;
+    border: none;
+    padding: 14px;
+    border-radius: 50px;
+    background: #1b61d1;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: #05337c;
+    }
+  }
+}
+
+.modal .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgb(190, 190, 190);
+  border-radius: 10px 10px 0 0;
+  font-size: 20px;
+
+  button {
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background: gray;
+      color: white;
+    }
   }
 }

@@ -110,3 +110,18 @@ export const mailData = [
     date: '21 Mayıs',
   },
 ];
+
+export const month_tr = [
+  'Ocak',
+  'Şubat',
+  'Mart',
+  'Nisan',
+  'Mayıs',
+  'Haziran',
+  'Temmuz',
+  'Ağustos',
+  'Eylül',
+  'Ekim',
+  'Kasım',
+  'Aralık',
+];
