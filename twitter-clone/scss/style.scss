@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'auth';
+@import 'responsive';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: white;
+  font-family: 'Poppins';
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 20px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  filter: brightness(60%);
+}
+
+// ANASAYFA
+
+#feed {
+  min-height: 100vh;
+  font-family: 'poppins';
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+
+  @include sm {
+    grid-template-columns: 1fr 5fr 0 !important;
+  }
+}
+
+//* Sol Alan
+nav {
+}
+
+//* Orta Alan
+main {
+  height: 100vh;
+  border: 1px solid rgb(60, 60, 60);
+  overflow: auto;
+}
+
+//* Sağ Alan
+aside {
+  @include md {
+    display: none;
+  }
+}

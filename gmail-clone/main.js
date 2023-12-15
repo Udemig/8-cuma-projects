@@ -131,3 +131,43 @@ ele.nav.addEventListener('click', (e) => {
     renderMails(mailData);
   }
 });
+
+// 7) Aratma Özelliği
+// Kullanıcın anlık olarak inputa her veri girdiğinde mailleri
+// filtrele
+
+// sayaç değişkeni
+let timer;
+
+ele.searchInp.addEventListener('input', (e) => {
+  // yen ituş vuruşunda önceki ger sayımı sıfırla
+  clearTimeout(timer);
+  // fonksiyonu çalıştırmak için ger isayım başlat
+  timer = setTimeout(() => searchMail(e), 1000);
+});
+
+function searchMail(e) {
+  // arama terimine erişme
+  const query = e.target.value;
+  console.log('filtreleme yapıldı', query);
+
+  // mail'in içerisndeki en az bir değer araattığımız terimi
+  // içeriyorsa maili filtrele
+  const filtred = mailData.filter((mail) =>
+    // objeyi diziye çevir
+    Object.values(mail)
+      // dizinin ihityacımız olan elemanlarını al
+      .slice(1, 6)
+      // objenin değelerinden en az biri arattığımız terimi içeriyor mu?
+      .some((value) => value.toLowerCase().includes(query))
+  );
+
+  if (filtred.length === 0) {
+    // dizide eleman yoksa uyarı bas
+    ele.mailsArea.innerHTML =
+      '<div class="warn">Arattığınız terime uygun mail bulunamadı</div>';
+  } else {
+    // filtrelenenleri ekrana bas
+    renderMails(filtred);
+  }
+}
