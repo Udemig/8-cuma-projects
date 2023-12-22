@@ -25,6 +25,19 @@ export default class API {
     return data;
   }
 
-  // tweetleri alır
-  static getTweets() {}
+  // parametre oalrak gönderdiğimiz endpoint'deki verileri alır
+  static async getData(endpoint) {
+    try {
+      // parametre olarak gelen uçnoktaya istek at
+      const res = await fetch(
+        `https://twitter-api45.p.rapidapi.com${endpoint}`,
+        options
+      );
+
+      // gelen veriyi işle ve döndür
+      return await res.json();
+    } catch (err) {
+      console.log('veirleri alırken hata', err);
+    }
+  }
 }

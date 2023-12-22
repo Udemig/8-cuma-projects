@@ -70,6 +70,60 @@
   margin-top: 5px;
 }
 
+#loader-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.loader {
+  --hue: 210;
+  --size: 50px;
+  --border: 7px;
+  --speed: 1s;
+  --blur: var(--border);
+}
+
+.loader {
+  width: var(--border);
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  --y: calc((var(--size) * -0.5) + (var(--border) * 0.5));
+  transform: rotate(0deg) translateY(var(--y));
+  animation: spin var(--speed) infinite linear;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--border) * -0.5);
+  border-radius: 50%;
+  background: white;
+  filter: blur(var(--blur));
+  z-index: -1;
+}
+
+.loader::after {
+  content: "";
+  width: var(--size);
+  aspect-ratio: 1;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  translate: -50% 0;
+  background: conic-gradient(white, hsl(var(--hue), 100%, 70%), hsl(var(--hue), 100%, 10%), transparent 65%);
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(transparent calc(var(--size) * 0.5 - var(--border) - 1px), white calc(var(--size) * 0.5 - var(--border)));
+          mask: radial-gradient(transparent calc(var(--size) * 0.5 - var(--border) - 1px), white calc(var(--size) * 0.5 - var(--border)));
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(-360deg) translateY(var(--y));
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -108,10 +162,288 @@ button:hover {
   }
 }
 
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 670px) {
+  nav {
+    align-items: center !important;
+  }
+}
+@media (min-width: 1000px) {
+  nav {
+    align-items: end;
+    margin-right: 50px;
+  }
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+@media (max-width: 1000px) {
+  nav ul {
+    align-items: end;
+    padding: 10px 5px !important;
+  }
+}
+nav ul li {
+  display: flex;
+  font-size: 19px;
+  gap: 10px;
+  padding: 20px 10px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+@media (max-width: 670px) {
+  nav ul li {
+    padding: 10px 5px;
+  }
+}
+nav ul li:hover {
+  background: rgb(60, 60, 60);
+}
+nav ul li:last-child {
+  background: #1da1f2;
+  padding: 10px 10px;
+}
+@media (max-width: 670px) {
+  nav ul li:last-child {
+    padding: 10px 5px;
+  }
+}
+nav ul img {
+  width: 80px;
+}
+@media (max-width: 1000px) {
+  nav ul img {
+    width: 40px;
+  }
+}
+nav ul a {
+  text-decoration: none;
+  color: white;
+}
+@media (max-width: 1000px) {
+  nav ul i {
+    font-size: 23px;
+  }
+}
+nav ul span {
+  white-space: nowrap;
+}
+@media (max-width: 1000px) {
+  nav ul span {
+    display: none;
+  }
+}
+nav .user-info {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  padding: 0 10px;
+}
+@media (max-width: 1000px) {
+  nav .user-info {
+    flex-direction: column;
+    align-items: end;
+  }
+}
+nav .user-info img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+@media (max-width: 1000px) {
+  nav .user-info img {
+    width: 50px;
+    height: 50px;
+  }
+}
+nav .user-info button {
+  font-size: 16px;
+  padding: 4px 10px;
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+@media (max-width: 1000px) {
+  nav .user-info button {
+    font-size: 18px;
+    padding: 6px 16px;
+  }
+}
+nav .user-info span,
+nav .user-info p {
+  white-space: nowrap;
+}
+@media (max-width: 1000px) {
+  nav .user-info span,
+  nav .user-info p {
+    display: none;
+  }
+}
+
 main {
   height: 100vh;
   border: 1px solid rgb(60, 60, 60);
   overflow: auto;
+}
+main header {
+  padding: 20px;
+  font-weight: bold;
+  font-size: 21px;
+  border-bottom: 1px solid rgb(60, 60, 60);
+}
+main #post-tweet {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(60, 60, 60);
+}
+main #post-tweet img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+main #post-tweet .input-area {
+  width: 100%;
+}
+main #post-tweet .input-area input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+main #post-tweet .input-area .button-area {
+  display: flex;
+  justify-content: end;
+}
+main #post-tweet .input-area .button-area button {
+  border-radius: 60px;
+  background: #1da1f2;
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+main #post-tweet .input-area .button-area button:hover {
+  background: rgb(74, 186, 255);
+}
+main::-webkit-scrollbar {
+  background: black;
+  width: 5px;
+}
+main::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+.tweets-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(60, 60, 60);
+}
+.tweet #user-img {
+  height: 50px;
+  border-radius: 50%;
+}
+@media (max-width: 670px) {
+  .tweet #user-img {
+    display: none;
+  }
+}
+.tweet #mobile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: none;
+}
+@media (max-width: 670px) {
+  .tweet #mobile-img {
+    display: block;
+  }
+}
+.tweet .body {
+  width: 100%;
+  margin-top: 10px;
+}
+.tweet .body .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.tweet .body .user a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+.tweet .body .user a p {
+  color: gray;
+}
+@media (max-width: 670px) {
+  .tweet .body .user a p {
+    font-size: 14;
+  }
+}
+.tweet .body .content {
+  margin-top: 10px;
+}
+.tweet .body .content img,
+.tweet .body .content video {
+  margin-top: 5px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 600px;
+  border-radius: 10px;
+}
+
+.tweet .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.tweet .buttons button {
+  background: none;
+  color: gray;
+}
+@media (max-width: 670px) {
+  .tweet .buttons button {
+    font-size: 14px;
+  }
+}
+.tweet .buttons button:nth-child(1):hover {
+  color: #1da1f2;
+  background: rgba(95, 171, 199, 0.404);
+}
+.tweet .buttons button:nth-child(2):hover {
+  color: green;
+  background: rgba(135, 223, 135, 0.319);
+}
+.tweet .buttons button:nth-child(3):hover {
+  color: pink;
+  background: rgba(255, 192, 203, 0.316);
+}
+.tweet .buttons button:nth-child(4):hover {
+  color: #1da1f2;
+  background: rgba(95, 171, 199, 0.404);
 }
 
 @media (max-width: 1000px) {
