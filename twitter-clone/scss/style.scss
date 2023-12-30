@@ -2,6 +2,7 @@
 @import 'auth';
 @import 'responsive';
 @import 'loader';
+@import 'user';
 
 * {
   margin: 0;
@@ -260,6 +261,7 @@ main {
   .body {
     width: 100%;
     margin-top: 10px;
+
     // kullanıcı bilgisi
     .user {
       display: flex;
@@ -287,6 +289,9 @@ main {
     // tweet içeriği
     .content {
       margin-top: 10px;
+      text-decoration: none;
+      color: white;
+
       img,
       video {
         margin-top: 5px;
@@ -341,7 +346,112 @@ main {
 
 //* Sağ Alan
 aside {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 50px;
   @include md {
     display: none;
+  }
+
+  form {
+    background: rgb(40, 40, 40);
+    padding: 5px 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 40px;
+    color: gray;
+
+    input {
+      background: none;
+      border: none;
+      font-family: 'poppins';
+      outline: none;
+      color: rgb(197, 196, 196);
+    }
+  }
+}
+
+// detay sayfası
+.nav {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  i {
+    font-size: 21px;
+    width: 33px;
+    height: 33px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+
+    &:hover {
+      background: rgb(80, 80, 80);
+    }
+  }
+  h4 {
+    font-size: 20px;
+  }
+}
+
+.detail-tweet {
+  padding: 20px;
+
+  .user img {
+    border-radius: 50%;
+  }
+
+  .content {
+    margin-top: 30px !important;
+  }
+
+  .info {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+
+    p:nth-child(1) {
+      color: gray;
+    }
+
+    p:nth-child(2) {
+      display: flex;
+      gap: 4px;
+      span:nth-child(2) {
+        color: gray;
+      }
+    }
+  }
+}
+
+#comment-form {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+
+  img {
+    border-radius: 50%;
+  }
+
+  input {
+    flex: 1;
+    background: black;
+    font-size: 20px;
+    color: white;
+    border: none;
+    outline: none;
+  }
+
+  button {
+    background: $blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
   }
 }
