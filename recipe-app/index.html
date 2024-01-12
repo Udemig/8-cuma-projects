@@ -35,9 +35,20 @@
       </div>
 
       <div class="bookmark">
-        <button>
-          <i class="bi bi-bookmark-heart-fill"></i>
-        </button>
+        <div class="bm-area">
+          <button class="bm-button">
+            <i class="bi bi-bookmark-heart-fill"></i>
+          </button>
+
+          <div class="dropdown">
+            <!-- <a href="#dasda">
+              <img
+                src="http://forkify-api.herokuapp.com/images/4021_MEDIUM8db8.jpg"
+              />
+              <span>Yemek ismi</span>
+            </a> -->
+          </div>
+        </div>
       </div>
     </header>
 
@@ -60,7 +71,7 @@
 
       <section id="recipe">
         <!-- resim alanı -->
-        <figure>
+        <!-- <figure>
           <img
             src="http://forkify-api.herokuapp.com/images/130_1_1350895958_lrg15e0.jpg"
           />
@@ -69,11 +80,52 @@
           <div class="like-area">
             <i class="bi bi-heart"></i>
           </div>
-        </figure>
+        </figure> -->
+
         <!-- tarif -->
+        <!-- <div class="ingredients">
+          <ul>
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <p>Salt And Pepper</p>
+            </li>
+            <li>
+              <i class="bi bi-check-circle"></i>
+              <p>1 whole Pork Butt (pork Shoulder Roast)</p>
+            </li>
+          </ul>
+
+          <button id="add-to-cart" class="CartBtn">
+            <span class="IconContainer">
+              <i class="cart bi bi-cart-fill"></i>
+            </span>
+            <p class="text">Add to Cart</p>
+          </button>
+        </div> -->
+
+        <!-- nasıl pişirilir -->
+        <!-- <div class="directions">
+          <h2>Nasıl Pişirilir?</h2>
+
+          <p>
+            Bu tarif dikkatlice
+            <span>The Pioneer Woman</span> tarafından hazırlanmış ve
+            test edilmiştir. Diğer detaylara onların websitesi
+            üzerinden erişebilirsiniz.
+          </p>
+
+          <a href="/asdas" target="_blank">Yönerge</a>
+        </div> -->
       </section>
 
-      <section id="cart"></section>
+      <section id="cart">
+        <div>
+          <h2>Sepet</h2>
+          <button id="clear">Temizle</button>
+        </div>
+
+        <ul id="basket"></ul>
+      </section>
     </main>
 
     <script

@@ -2,6 +2,9 @@ export const ele = {
   form: document.querySelector('form'),
   result_list: document.querySelector('#results'),
   recipe_area: document.querySelector('#recipe'),
+  like_list: document.querySelector('.dropdown'),
+  basket_list: document.querySelector('#basket'),
+  clear_btn: document.querySelector('#clear'),
 };
 
 // bildirim gönderir

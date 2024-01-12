@@ -114,7 +114,7 @@ main {
   grid-template-columns: 1fr 2fr 1fr;
   flex: 1;
 
-  @include md {
+  @include lg {
     grid-template-columns: 1fr;
   }
 }
@@ -217,5 +217,201 @@ main #recipe {
     white-space: nowrap;
     padding: 10px 30px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.358);
+  }
+
+  .like-area {
+    display: flex;
+    justify-content: end;
+    padding: 30px;
+
+    i {
+      font-size: 26px;
+      padding: 5px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: all 300ms;
+      &:hover {
+        background: rgb(215, 215, 215);
+      }
+    }
+  }
+}
+
+// tarif detay  > içeik alanı
+#recipe .ingredients {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  margin: 40px 0;
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 40px;
+
+    @include md {
+      grid-template-columns: 1fr;
+    }
+
+    li {
+      display: flex;
+      gap: 10px;
+
+      i {
+        color: #a9c9ff;
+      }
+
+      p {
+        white-space: nowrap;
+        max-width: 290px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include sm {
+          max-width: 300px;
+        }
+
+        @include md {
+          max-width: 450px;
+        }
+      }
+    }
+  }
+}
+
+// tarif detay > yönerge
+#recipe .directions {
+  text-align: center;
+  padding-bottom: 40px;
+
+  h2 {
+    font-family: 'Ubuntu';
+    font-size: 30px;
+    transform: skewY(-3deg);
+    font-weight: 600;
+    text-shadow: 0 0 30px #ffbbec;
+    color: #ffbbec;
+  }
+
+  p {
+    margin: 20px 0;
+    padding: 5px;
+    span {
+      color: #ffbbec;
+    }
+  }
+
+  a {
+    padding: 10px 30px;
+    border: 1px solid #a9c9ff;
+    border-radius: 30px;
+    transition: all 300ms;
+    &:hover {
+      background: #a9c9ff;
+      color: white;
+    }
+  }
+}
+
+// like alanı
+.bm-area {
+  position: relative;
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bm-button {
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  font-size: 13px;
+  position: absolute;
+  overflow: hidden;
+  left: -155px;
+  z-index: 1;
+  min-width: 200px;
+  background: #212121;
+  border: 2px solid #f9a9cc;
+  border-radius: 15px 0 15px 15px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dropdown a {
+  color: #f9a9cc;
+  padding: 8px 10px;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s;
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}
+
+// buton hoverlanırsa dropdown'ı göster
+.bm-area:hover .dropdown {
+  display: block;
+}
+
+.bm-area:hover button {
+  border-radius: 13px 13px 0 0;
+}
+
+.dropdown a:hover {
+  background: #f9a9cc;
+  color: #212121;
+}
+
+// spete
+main #cart {
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    h2 {
+      color: #a9c9ff;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.136);
+    }
+
+    button {
+      background: red;
+      color: white;
+      cursor: pointer;
+      transition: filter 0.3s;
+      &:hover {
+        filter: brightness(70%);
+      }
+    }
+  }
+
+  ul {
+    max-height: 90vh;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: black;
+    }
+
+    i {
+      cursor: pointer;
+      font-size: 20px;
+      &:hover {
+        color: red;
+        background: rgba(128, 128, 128, 0.459);
+        border-radius: 4px;
+      }
+    }
   }
 }

@@ -126,6 +126,77 @@ input {
     opacity: 0.8;
   }
 }
+.CartBtn {
+  width: 180px;
+  height: 40px;
+  border-radius: 12px;
+  margin: 60px auto 0;
+  border: none;
+  background-color: rgb(255, 208, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+}
+
+.CartBtn p,
+.CartBtn i {
+  pointer-events: none;
+}
+
+.IconContainer {
+  position: absolute;
+  left: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.5s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(17, 17, 17);
+  z-index: 1;
+  transition-duration: 0.5s;
+  font-size: 1.04em;
+  font-weight: 600;
+}
+
+.CartBtn:hover .IconContainer {
+  transform: translateX(58px);
+  border-radius: 40px;
+  transition-duration: 0.5s;
+}
+
+.CartBtn:hover .text {
+  transform: translate(10px, 0px);
+  transition-duration: 0.5s;
+}
+
+.CartBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.5s;
+}
+
 body {
   min-height: 100vh;
   overflow-x: hidden;
@@ -224,7 +295,7 @@ main {
   grid-template-columns: 1fr 2fr 1fr;
   flex: 1;
 }
-@media (max-width: 700px) {
+@media (max-width: 1200px) {
   main {
     grid-template-columns: 1fr;
   }
@@ -308,4 +379,183 @@ main #recipe {
   white-space: nowrap;
   padding: 10px 30px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.358);
+}
+#recipe figure .like-area {
+  display: flex;
+  justify-content: end;
+  padding: 30px;
+}
+#recipe figure .like-area i {
+  font-size: 26px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 300ms;
+}
+#recipe figure .like-area i:hover {
+  background: rgb(215, 215, 215);
+}
+
+#recipe .ingredients {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  margin: 40px 0;
+}
+#recipe .ingredients ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+@media (max-width: 700px) {
+  #recipe .ingredients ul {
+    grid-template-columns: 1fr;
+  }
+}
+#recipe .ingredients ul li {
+  display: flex;
+  gap: 10px;
+}
+#recipe .ingredients ul li i {
+  color: #a9c9ff;
+}
+#recipe .ingredients ul li p {
+  white-space: nowrap;
+  max-width: 290px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 500px) {
+  #recipe .ingredients ul li p {
+    max-width: 300px;
+  }
+}
+@media (max-width: 700px) {
+  #recipe .ingredients ul li p {
+    max-width: 450px;
+  }
+}
+
+#recipe .directions {
+  text-align: center;
+  padding-bottom: 40px;
+}
+#recipe .directions h2 {
+  font-family: "Ubuntu";
+  font-size: 30px;
+  transform: skewY(-3deg);
+  font-weight: 600;
+  text-shadow: 0 0 30px #ffbbec;
+  color: #ffbbec;
+}
+#recipe .directions p {
+  margin: 20px 0;
+  padding: 5px;
+}
+#recipe .directions p span {
+  color: #ffbbec;
+}
+#recipe .directions a {
+  padding: 10px 30px;
+  border: 1px solid #a9c9ff;
+  border-radius: 30px;
+  transition: all 300ms;
+}
+#recipe .directions a:hover {
+  background: #a9c9ff;
+  color: white;
+}
+
+.bm-area {
+  position: relative;
+  display: block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bm-button {
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  font-size: 13px;
+  position: absolute;
+  overflow: hidden;
+  left: -155px;
+  z-index: 1;
+  min-width: 200px;
+  background: #212121;
+  border: 2px solid #f9a9cc;
+  border-radius: 15px 0 15px 15px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dropdown a {
+  color: #f9a9cc;
+  padding: 8px 10px;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+.dropdown a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.bm-area:hover .dropdown {
+  display: block;
+}
+
+.bm-area:hover button {
+  border-radius: 13px 13px 0 0;
+}
+
+.dropdown a:hover {
+  background: #f9a9cc;
+  color: #212121;
+}
+
+main #cart div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+main #cart div h2 {
+  color: #a9c9ff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.136);
+}
+main #cart div button {
+  background: red;
+  color: white;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+main #cart div button:hover {
+  filter: brightness(70%);
+}
+main #cart ul {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+main #cart ul::-webkit-scrollbar {
+  width: 6px;
+}
+main #cart ul::-webkit-scrollbar-thumb {
+  background: black;
+}
+main #cart ul i {
+  cursor: pointer;
+  font-size: 20px;
+}
+main #cart ul i:hover {
+  color: red;
+  background: rgba(128, 128, 128, 0.459);
+  border-radius: 4px;
 }/*# sourceMappingURL=style.css.map */
