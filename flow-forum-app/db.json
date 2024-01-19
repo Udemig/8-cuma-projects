@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "name": "Ayşe",
+      "email": "deneme9@gmail.com",
+      "password": "asdasd",
+      "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1705691161/flow/jn76btbsly89sil1vy2y.png",
+      "id": "111bd431-89f3-448e-8a1d-df052490a638"
+    },
+    {
+      "id": "87981f88-4e70-4018-986e-daa842567c5b",
+      "name": "Mehmet",
+      "email": "mehmet@gmail.com",
+      "password": "deneme123",
+      "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1705693570/flow/dgs5dhdqs2fcgagb56cm.png"
+    },
+    {
+      "id": "2cb929ca-d61b-4f93-aa6a-740a141cee68",
+      "name": "Mahmut",
+      "email": "Mahmut@gmail.com",
+      "password": "deneme123",
+      "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1705697845/flow/lc9xeemprmvsponshorv.png"
+    }
+  ]
+}
