@@ -6,12 +6,15 @@ import { UserProvider } from './context/UserContext.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter } from 'react-router-dom';
+import { PostProvider } from './context/PostContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <UserProvider>
-      <App />
-      <ToastContainer />
-    </UserProvider>
+    <PostProvider>
+      <UserProvider>
+        <App />
+        <ToastContainer />
+      </UserProvider>
+    </PostProvider>
   </BrowserRouter>
 );

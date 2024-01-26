@@ -1,25 +1,160 @@
 {
   "users": [
     {
-      "name": "Ayşe",
-      "email": "deneme9@gmail.com",
-      "password": "asdasd",
-      "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1705691161/flow/jn76btbsly89sil1vy2y.png",
-      "id": "111bd431-89f3-448e-8a1d-df052490a638"
-    },
-    {
-      "id": "87981f88-4e70-4018-986e-daa842567c5b",
-      "name": "Mehmet",
-      "email": "mehmet@gmail.com",
-      "password": "deneme123",
-      "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1705693570/flow/dgs5dhdqs2fcgagb56cm.png"
-    },
-    {
       "id": "2cb929ca-d61b-4f93-aa6a-740a141cee68",
       "name": "Mahmut",
       "email": "Mahmut@gmail.com",
-      "password": "deneme123",
+      "password": "deneme",
       "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1705697845/flow/lc9xeemprmvsponshorv.png"
+    },
+    {
+      "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+      "name": "Furkan",
+      "email": "furkan@gmail.com",
+      "password": "deneme123",
+      "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+    }
+  ],
+  "posts": [
+    {
+      "id": "a44c474a-c1d0-45be-99c8-2acb86af0b0a",
+      "title": "Merkanik Arıza",
+      "content": "Benim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştuBenim klavyemde bir sdorun oluştu.... ",
+      "category": "Teknoloji",
+      "date": "2024-01-26T20:31:35.059Z",
+      "comments": [],
+      "author": {
+        "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+        "name": "Furkan",
+        "email": "furkan@gmail.com",
+        "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+      }
+    },
+    {
+      "id": "2ee1e4b6-fc91-426b-9b83-2bc2614c385b",
+      "title": "Merkanik Arıza",
+      "content": "Benim klavyemde bir sdorun oluştu.... ",
+      "category": "Teknoloji",
+      "date": "2024-01-26T20:34:15.535Z",
+      "comments": [],
+      "author": {
+        "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+        "name": "Furkan",
+        "email": "furkan@gmail.com",
+        "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+      }
+    },
+    {
+      "id": "c46f2e96-38aa-40c5-9d8c-f4b04530fc60",
+      "title": "Merkanik Arıza",
+      "content": "Benim klavyemde bir sdorun oluştu.... ",
+      "category": "Teknoloji",
+      "date": "2024-01-26T20:34:23.793Z",
+      "comments": [],
+      "author": {
+        "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+        "name": "Furkan",
+        "email": "furkan@gmail.com",
+        "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+      }
+    },
+    {
+      "id": "e6ee3ac3-c320-4587-a4c2-96dfa0ec4bfa",
+      "title": "Merkanik Arıza",
+      "content": "Benim klavyemde bir sdorun oluştu.... ",
+      "category": "Teknoloji",
+      "date": "2024-01-26T20:34:24.864Z",
+      "comments": [],
+      "author": {
+        "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+        "name": "Furkan",
+        "email": "furkan@gmail.com",
+        "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+      }
+    },
+    {
+      "id": "ef10e327-3af7-4472-a059-512d129f60b4",
+      "title": "Merkanik Arıza",
+      "content": "Benim klavyemde bir sdorun oluştu.... ",
+      "category": "Teknoloji",
+      "date": "2024-01-26T20:34:25.329Z",
+      "comments": [],
+      "author": {
+        "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+        "name": "Furkan",
+        "email": "furkan@gmail.com",
+        "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+      }
+    },
+    {
+      "id": "3121e7da-e3d8-43f0-8240-fa9f5bef0a42",
+      "title": "Merkanik Arıza",
+      "content": "Benim klavyemde bir sdorun oluştu.... ",
+      "category": "Teknoloji",
+      "date": "2024-01-26T20:34:28.568Z",
+      "comments": [],
+      "author": {
+        "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+        "name": "Furkan",
+        "email": "furkan@gmail.com",
+        "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+      }
+    },
+    {
+      "id": "3d88d06a-4a0e-4487-bc65-0ac1febfc5d8",
+      "title": "dfgdfg",
+      "content": "dfg",
+      "category": "Eğitim ve Akademik Konular",
+      "date": "2024-01-26T20:52:59.283Z",
+      "comments": [],
+      "author": {
+        "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+        "name": "Furkan",
+        "email": "furkan@gmail.com",
+        "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+      }
+    },
+    {
+      "id": "32a0eafd-0a42-4dc6-af2d-ea199c8f6842",
+      "title": "sadasd",
+      "content": "asdasd",
+      "category": "Eğitim ve Akademik Konular",
+      "date": "2024-01-26T20:53:49.463Z",
+      "comments": [],
+      "author": {
+        "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+        "name": "Furkan",
+        "email": "furkan@gmail.com",
+        "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+      }
+    },
+    {
+      "id": "99f02752-9874-4d1e-bccc-caa81f01c7e0",
+      "title": "sadasd",
+      "content": "sad",
+      "category": "Hobi ve İlgi Alanları",
+      "date": "2024-01-26T20:54:19.920Z",
+      "comments": [],
+      "author": {
+        "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+        "name": "Furkan",
+        "email": "furkan@gmail.com",
+        "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+      }
+    },
+    {
+      "id": "4c4d823a-7b8f-4025-a85b-7060d86bb0e1",
+      "title": "asdasd",
+      "content": "sazdasd",
+      "category": "İş ve Kariyer",
+      "date": "2024-01-26T20:55:28.046Z",
+      "comments": [],
+      "author": {
+        "id": "08287f06-c8b9-48fa-a620-7fbc42f12cc3",
+        "name": "Furkan",
+        "email": "furkan@gmail.com",
+        "image": "http://res.cloudinary.com/dekwikph3/image/upload/v1706296447/flow/zdhswxdluqn4j2wqdrri.png"
+      }
     }
   ]
 }

@@ -18,6 +18,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     // id'sini alma
     const id = localStorage.getItem('TOKEN');
+
     if (id) {
       // id'sine göre hesap bilgilerini al
       axios
@@ -69,13 +70,56 @@ export const UserProvider = ({ children }) => {
   };
 
   // hesaptan çıkma
+  const logout = () => {
+    //1) local storage'ı temizle
+    localStorage.removeItem('TOKEN');
+
+    //2) aktif kullanıcyı sıfırla
+    setActiveUser(null);
+
+    //3) logine yönlendir
+    navigate('/login');
+  };
 
   // hesabı sil
+  const deleteAccount = () => {
+    // aktif kullanıcı veritabanından sil
+    axios.delete(`/users/${activeUser.id}`).then(() => {
+      // kullanıcının oturumunu kapat
+      logout();
+
+      // bildirim ver
+      toast.warning('Hesabınız kaldırldı');
+    });
+  };
 
   // hesabı güncelle
+  const updatePassword = (newPass) => {
+    axios
+      .patch(`/users/${activeUser.id}`, { password: newPass })
+      .then((res) => {
+        // hesaba tekrar giriş yapılması zorunlu tutmak için
+        // oturumu kapatıyoruz
+        logout();
+
+        // bildirim ver
+        toast.success(
+          'Şifreniz başarıyla güncellendi. Tekrar giriş yapın.'
+        );
+      });
+  };
 
   return (
-    <UserContext.Provider value={{ activeUser, signup, login }}>
+    <UserContext.Provider
+      value={{
+        activeUser,
+        signup,
+        login,
+        logout,
+        deleteAccount,
+        updatePassword,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

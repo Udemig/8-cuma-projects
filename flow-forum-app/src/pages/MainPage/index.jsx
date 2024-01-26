@@ -1,5 +1,14 @@
+import Form from './Form';
+import ListPosts from './ListPosts';
+
 const MainPage = () => {
-  return <h1>ANASAYFA</h1>;
+  return (
+    <>
+      <Form />
+
+      <ListPosts />
+    </>
+  );
 };
 
 export default MainPage;
